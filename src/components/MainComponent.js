@@ -8,27 +8,26 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import DishDetail from './DishdetailComponent';
 
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux';
 const mapStateToProps = state => {
-    return {
-      dishes: state.dishes,
-      comments: state.comments,
-      promotions: state.promotions,
-      leaders: state.leaders
+
+    return{
+        comments: state.comments,
+        dishes: state.dishes,
+        leaders: state.leaders,
+        promotions: state.promotions,
     }
-  }
+}       
+
 
 class Main extends Component {
 
     constructor(props) {
         super(props);
-
-        
     }
-    
 
     render() {
 
